@@ -1,0 +1,21 @@
+{
+  "file": "c15.p014.csv",
+  "rows": 16067,
+  "columns": 41,
+  "timestamp_min": "2018-06-29 14:01:48.048000",
+  "timestamp_max": "2018-07-12 13:55:36.036000",
+  "activity_label_missing_count": 16067,
+  "activity_label_missing_percent": 100.0,
+  "speed_mean_minus_one_count": 14996,
+  "speed_std_missing_count": 3258,
+  "course_mode_minus_one_count": 15808,
+  "course_std_missing_count": 3258,
+  "user_acceleration_x_mean_equals_y_mean_count": 16067,
+  "user_acceleration_x_std_equals_y_std_count": 16067,
+  "zero_duration_rows": 3258,
+  "all_std_missing_rows": 3258,
+  "zero_duration_and_all_std_missing_rows": 3258,
+  "time_of_day_cos_matches_cos_count": 16067,
+  "time_of_day_cos_matches_sin_count": 14,
+  "day_of_week_matches_stamp_end_count": 16067
+}

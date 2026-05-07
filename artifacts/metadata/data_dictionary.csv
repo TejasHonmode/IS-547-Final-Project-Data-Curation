@@ -1,0 +1,42 @@
+variable_name,type,description,curation_note
+stamp_start,Timestamp,Start time of window used to compute features; local user time.,Timestamp missing timezone; local time stated in documentation.
+stamp_end,Timestamp,End time of window used to compute features; local user time.,Timestamp missing timezone; local time stated in documentation.
+yaw_mean,float,"Mean yaw angle across window, radians.",
+pitch_mean,float,"Mean pitch angle across window, radians.",
+roll_mean,float,"Mean roll angle across window, radians.",
+rotation_rate_x_mean,float,"Mean rotation rate around x-axis, radians per second.",
+rotation_rate_y_mean,float,"Mean rotation rate around y-axis, radians per second.",
+rotation_rate_z_mean,float,"Mean rotation rate around z-axis, radians per second.",
+user_acceleration_x_mean,float,"Mean user acceleration along x-axis, meters per second squared.","In c15.p014.csv, equals y-axis mean in every row; requires author confirmation."
+user_acceleration_y_mean,float,"Mean user acceleration along y-axis, meters per second squared.","In c15.p014.csv, equals x-axis mean in every row; requires author confirmation."
+user_acceleration_z_mean,float,"Mean user acceleration along z-axis, meters per second squared.",
+yaw_std,float,"Standard deviation of yaw angle, radians.",Missing formsome records.
+pitch_std,float,"Standard deviation of pitch angle, radians.",Missing for some records.
+roll_std,float,"Standard deviation of roll angle, radians.",Missing for some records.
+rotation_rate_x_std,float,"Standard deviation of rotation rate around x-axis, radians per second.",Missing for some records.
+rotation_rate_y_std,float,"Standard deviation of rotation rate around y-axis, radians per second.",Missing for some records.
+rotation_rate_z_std,float,"Standard deviation of rotation rate around z-axis, radians per second.",Missing for some records.
+user_acceleration_x_std,float,Standard deviation of acceleration along x-axis.,Equals y-axis std in every row after accounting for missing values; requires author confirmation.
+user_acceleration_y_std,float,Standard deviation of acceleration along y-axis.,Equals x-axis std in every row after accounting for missing values; requires author confirmation.
+user_acceleration_z_std,float,Standard deviation of acceleration along z-axis.,
+rotation_magnitude_mean,float,"Mean magnitude of rotation rate, radians per second.",
+acceleration_magnitude_mean,float,"Mean magnitude of acceleration, meters per second squared.",
+rotation_magnitude_std,float,Standard deviation of magnitude of rotation rate.,Missing for some records.
+acceleration_magnitude_std,float,Standard deviation of magnitude of acceleration.,Missing for some records.
+speed_mean,float,"Mean speed across window, meters per second. -1 indicates GPS speed unavailable.",Uses -1 in inspected subset for many unavailable GPS means.
+speed_std,float,Standard deviation of speed across window.,Uses empty values for missing std values in inspected subset; -1 convention not applied here.
+course_mode,float,"Mode of course across window, degrees. -1 indicates GPS course unavailable.",Uses -1 in inspected subset for many unavailable GPS course values.
+course_std,float,Standard deviation of course across window.,Uses empty values for missing std values in inspected subset; -1 convention not applied here.
+distance_from_home_mean,float,"Mean Haversine distance from home, meters.",
+distance_from_home_std,float,"Standard deviation of Haversine distance from home, meters.",Missing for some records.
+distance_from_home_latitude_mean,float,"Mean distance from home along latitude, degrees.",
+distance_from_home_latitude_std,float,"Standard deviation of latitude distance from home, degrees.",Missing for some records.
+distance_from_home_longitude_mean,float,"Mean distance from home along longitude, degrees.",
+distance_from_home_longitude_std,float,"Standard deviation of longitude distance from home, degrees.",Missing for some records.
+bearing_from_home_mode,float,"Mode of bearing from home, degrees.",
+bearing_from_home_std,float,"Standard deviation of bearing from home, degrees.",Missing for some records.
+time_of_day_radians,float,Time of day in radians for end of window.,
+time_of_day_sin,float,sin(time_of_day_radians).,Validated against observed values in inspected subset.
+time_of_day_cos,float,Should be cos(time_of_day_radians). Provided feature description says sin(time_of_day_radians).,"Observed values match cosine, not sine. Documentation correction recommended."
+day_of_week,float,Numeric weekday for end of window: Monday=0 through Sunday=6.,
+activity_label,string,Activity during window; one of 12 allowed values. Empty means no ground truth.,"100% missing in inspected c15.p014 subset, limiting supervised reuse for this file."
